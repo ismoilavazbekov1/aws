@@ -14,9 +14,6 @@
     "subnet_ids" : [ ],
     "security_group_ids" : [ ],
     "dependencies" : [ {
-      "resource_name" : "${target_bucket}",
-      "resource_type" : "s3_bucket"
-    }, {
       "resource_name" : "uuid_trigger",
       "resource_type" : "cloudwatch_rule"
     } ],
