@@ -1,5 +1,5 @@
 {
-  "lambda-basic-execution": {
+  "appsync_policy": {
     "policy_content": {
       "Statement": [
         {
@@ -14,7 +14,11 @@
             "dynamodb:DeleteItem",
             "ssm:PutParameter",
             "ssm:GetParameter",
-            "kms:Decrypt"
+            "kms:Decrypt",
+            "appsync:GraphQL",
+            "appsync:GetGraphqlApi",
+            "appsync:ListGraphqlApis",
+            "appsync:ListApiKeys"
           ],
           "Effect": "Allow",
           "Resource": "*"
@@ -29,19 +33,19 @@
     "resource_type": "dynamodb_table",
     "hash_key_name": "id",
     "hash_key_type": "S",
-    "read_capacity": 1,
-    "write_capacity": 1,
+    "read_capacity": 100,
+    "write_capacity": 100,
     "global_indexes": [],
     "autoscaling": [],
     "tags": {}
   },
-  "app-sync-role": {
+  "appsync_role": {
     "resource_type": "iam_role",
     "principal_service": "appsync",
-    "predefined_policies": [
-      "lambda-basic-execution"
+    "predefined_policies": [],
+    "custom_policies": [
+      "appsync_policy"
     ],
-    "custom_policies": [],
     "allowed_accounts": [],
     "instance_profile": false,
     "permissions_boundary": "",
