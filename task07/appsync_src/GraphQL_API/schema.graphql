@@ -1,6 +1,5 @@
 # Define the structure of your API with the GraphQL
 # schema definition language (SDL) here.
-
 type Meta {
     key1: Int!
     key2: String!
@@ -29,4 +28,3 @@ schema {
     query: Query
     mutation: Mutation
 }
-    

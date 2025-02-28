@@ -1,5 +1,5 @@
 {
-  "appsync_policy": {
+  "lambda-basic-execution": {
     "policy_content": {
       "Statement": [
         {
@@ -33,18 +33,18 @@
     "resource_type": "dynamodb_table",
     "hash_key_name": "id",
     "hash_key_type": "S",
-    "read_capacity": 100,
-    "write_capacity": 100,
+    "read_capacity": 1,
+    "write_capacity": 1,
     "global_indexes": [],
     "autoscaling": [],
     "tags": {}
   },
-  "appsync_role": {
+  "app-sync-role": {
     "resource_type": "iam_role",
     "principal_service": "appsync",
     "predefined_policies": [],
     "custom_policies": [
-      "appsync_policy"
+      "lambda-basic-execution"
     ],
     "allowed_accounts": [],
     "instance_profile": false,
