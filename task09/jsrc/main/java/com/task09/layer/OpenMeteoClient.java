@@ -20,3 +20,4 @@ public class OpenMeteoClient {
         return httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
     }
 }
+
